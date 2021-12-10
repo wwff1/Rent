@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "mongoUri": "mongodb+srv://usDB:12345@cluster0.s7wb6.mongodb.net/app?retryWrites=true&w=majority",
+  "jwtSecret": "secretstring",
+  "baseUrl": "http://localhost:5000"
+}

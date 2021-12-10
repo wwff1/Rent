@@ -1,0 +1,41 @@
+{
+  "name": "rentauto",
+  "version": "1.0.0",
+  "description": "back stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app.js",
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "client:install": "npm install --prefix client",
+    "client:build": "npm run build --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Dmitriy Volchkov <stud0000214701@study.utmn.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@mui/material": "^5.2.2",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "git": "^0.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "material-ui-toast": "^1.1.6",
+    "mongoose": "^5.12.13",
+    "react-datepicker": "^4.4.0",
+    "react-router": "^5.2.0",
+    "react-scripts": "^4.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "config": "^3.3.6",
+    "cross-env": "^7.0.3",
+    "mongoose-float": "^1.0.4",
+    "nodemon": "^2.0.7"
+  }
+}
