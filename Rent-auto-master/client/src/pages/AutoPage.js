@@ -200,7 +200,7 @@ export default function AutoPage() {
                 const data = await request('/api/auto/add', 'POST', {...form})
                 if (data.ok === true) {
                     const type = await data.name
-                    document.querySelector("tbody").append(row(type));
+                    row(type);
                 }
             } catch (e) {
 

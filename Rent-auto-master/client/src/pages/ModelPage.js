@@ -159,7 +159,7 @@ export default function ModelPage() {
                 const data = await request('/api/model/add', 'POST', {...form})
                 if (data.ok === true) {
                     const model = await data.name
-                    document.querySelector("tbody").append(row(model));
+                    row(model);
                 }
 
             } catch (e) {

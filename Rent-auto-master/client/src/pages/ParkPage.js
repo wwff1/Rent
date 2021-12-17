@@ -179,7 +179,7 @@ export default function ParkPage() {
                 const data = await request('/api/park/add', 'POST', {...form})
                 if (data.ok === true) {
                     const type = await data.name
-                    document.querySelector("tbody").append(row(type));
+                    row(type);
                 }
 
             } catch (e) {

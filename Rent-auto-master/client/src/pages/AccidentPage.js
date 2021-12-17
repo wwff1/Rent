@@ -202,7 +202,7 @@ export default function AccidentPage() {
                 const data = await request('/api/accident/add', 'POST', {...form, startDate})
                 if (data.ok === true) {
                     const type = await data.name
-                    document.querySelector("tbody").append(row(type));
+                    row(type);
                 }
             } catch (e) {
 
@@ -389,11 +389,9 @@ export default function AccidentPage() {
                                       }
                                       return option;
                                   }}
-                                  getOptionSelected={(option) => option.selected === form.auto}
-                                  style={{ position: "absolute", marginLeft: 420, marginTop: 5}}
+                                  style={{ position: "absolute", marginLeft: 420, marginTop: 20}}
                                   renderInput={(params) => <TextField {...params} label="Автомобиль"/>}
                     />
-
                     <TextField className={classes.text}
                                variant="outlined"
                                size="small"

@@ -198,7 +198,7 @@ export default function OrderPage() {
                 const data = await request('/api/order/add', 'POST', {...form, startDate1, startDate2})
                 if (data.ok === true) {
                     const type = await data.name
-                    document.querySelector("tbody").append(row(type));
+                    row(type);
                 }
             } catch (e) {
 

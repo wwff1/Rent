@@ -172,7 +172,8 @@ export default function MarkPage() {
                 const data = await request('/api/mark/add', 'POST', {...form})
                 if (data.ok === true) {
                     const mark = await data.name
-                    document.querySelector("tbody").append(row(mark));
+                    row(mark);
+                    console.log("erewr")
                 }
 
             } catch (e) {

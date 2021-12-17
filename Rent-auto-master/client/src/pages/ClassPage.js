@@ -172,7 +172,7 @@ export default function ClassPage() {
                 const data = await request('/api/class/add', 'POST', {...form})
                 if (data.ok === true) {
                     const clas = await data.name
-                    document.querySelector("tbody").append(row(clas));
+                    row(clas);
                 }
 
             } catch (e) {

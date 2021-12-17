@@ -47,7 +47,7 @@ export const useRoutes = isAuthenticated => {
                     <Route path="/orderPage" exact>
                         <OrderPage />
                     </Route>
-                    <Redirect to="/markPage" />
+                    <Redirect to="/orderPage" />
                 </Switch>
             )
         }
