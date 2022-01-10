@@ -6,6 +6,8 @@ const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
 const router = Router()
 
+//1083142119832-64ku0j2lr3i6s5a3b0u4dpvoq9mpd64b.apps.googleusercontent.com
+// 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
 
 // /api/auth/register
 router.post(
@@ -63,9 +65,8 @@ router.post(
                     message: 'Некорректный данные при входе в систему'
                 })
             }
-
             const {login, password} = req.body
-
+            console.log(req)
             const user = await User.findOne({ login })
 
             if (!user) {

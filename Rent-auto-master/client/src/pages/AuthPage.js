@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import {useHttp} from "../hooks/http.hooks";
 import {useMessage} from "../hooks/message.hook";
 import {AuthContext} from "../context/AuthContext";
+import GoogleLogin, {GoogleLogout} from 'react-google-login';
 
 
 
@@ -77,10 +78,15 @@ export const AuthPage = () => {
 
         }
     }
+    const responseGoogle = (response) => {
+        auth.login(response.accessToken, response.googleId)
+        console.log(response)
+    }
 
-
+    console.log(auth)
 
     const classes = useStyles();
+
     return (
         <Container component="main" maxWidth="xs">
             <CssBaseline />
@@ -140,6 +146,13 @@ export const AuthPage = () => {
                     >
                         Регистрация
                     </Button>
+                    <GoogleLogin
+                        clientId="1083142119832-64ku0j2lr3i6s5a3b0u4dpvoq9mpd64b.apps.googleusercontent.com"
+                        buttonText="Авторизация через GOOGLE"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />
                 </form>
             </div>
         </Container>

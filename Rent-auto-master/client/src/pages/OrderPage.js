@@ -24,6 +24,7 @@ import StickyFooter from "./Footer";
 import {Autocomplete} from "@material-ui/lab";
 import DatePicker from "react-datepicker";
 import ReactHTMLTableToExcel from "react-html-table-to-excel"
+import {useGoogleLogout} from "react-google-login";
 
 const drawerWidth = 260;
 
@@ -172,11 +173,39 @@ export default function OrderPage() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+    // const logout = response => {
+    //     const clientId = "658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+    //     window.sessionStorage.removeItem("access_token");
+    //     window.sessionStorage.removeItem("nama");
+    //     this.setState(state => ({
+    //             isLogined: false,
+    //             token: ''
+    //         }),
+    //         console.log(response)
+    //     );
+    // }
+
+    // const { signOut, loaded } = useGoogleLogout({
+    //     jsSrc,
+    //     onFailure,
+    //     clientId,
+    //     cookiePolicy,
+    //     loginHint,
+    //     hostedDomain,
+    //     fetchBasicProfile,
+    //     discoveryDocs,
+    //     uxMode,
+    //     redirectUri,
+    //     scope,
+    //     accessType,
+    //     onLogoutSuccess
+    // })
 
     const auth = useContext(AuthContext)
     const logoutHandler = async () => {
         try {
             auth.logout()
+
         } catch (e) {
 
         }
@@ -383,6 +412,7 @@ export default function OrderPage() {
                     <Button component="h1" variant="h6" color="inherit" noWrap onClick={logoutHandler}>Выход</Button>
                 </Toolbar>
             </AppBar>
+
             <Drawer
                 variant="permanent"
                 classes={{
@@ -402,6 +432,7 @@ export default function OrderPage() {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}/>
                 <form noValidate name="orderForm">
+
                     <p style={{ position: "absolute", marginTop: 10, marginLeft: 30}}>Дата начала аренды</p>
                     <DatePicker
                         id="dateA"
@@ -484,6 +515,7 @@ export default function OrderPage() {
                     >
                         Сохранить
                     </Button>
+
                     </form>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={2}>
